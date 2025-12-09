@@ -1,0 +1,40 @@
+<h2>Gestión de Canciones</h2>
+
+<form (ngSubmit)="guardarCanciones()">
+
+    <input [(ngModel)]="cancion.nombre" name="nombre" placeholder="Nombre Cancion">
+
+    <input [(ngModel)]="cancion.artista" name="artista" placeholder="Artista">
+
+    <input [(ngModel)]="cancion.duracion" name="duracion" placeholder="Duracion">
+
+    <button (click)="recargarPagina()" type="submit" [disabled]="cargando">
+        {{ editando ? 'Actualizar' : 'Guardar' }}
+    </button>
+
+</form>
+
+<hr>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nombre Canción</th>
+            <th>Artista</th>
+            <th>Duracion</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let c of canciones">
+            <td> {{ c.nombre }} </td>
+            <td> {{ c.artista }} </td>
+            <td> {{ c.duracion }} </td>
+            <td>
+                <button type="button" [disabled]="cargando" (click)="editarCancion(c)">Editar</button>
+                <button type="button" [disabled]="cargando" (click)="eliminarCancion(c._id); recargarPagina()">Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
