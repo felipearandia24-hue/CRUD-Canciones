@@ -1,4 +1,6 @@
-<h2>Gestión de Canciones</h2>
+<div class="navbar">
+    <h2>Gestión de Canciones</h2>
+</div>
 
 <form (ngSubmit)="guardarCanciones()">
 
@@ -7,6 +9,10 @@
     <input [(ngModel)]="cancion.artista" name="artista" placeholder="Artista">
 
     <input [(ngModel)]="cancion.duracion" name="duracion" placeholder="Duracion">
+
+    <input [(ngModel)]="cancion.anio" name="anio" placeholder="Año">
+
+    <input [(ngModel)]="cancion.reproducciones" name="reproducciones" placeholder="Reproducciones">
 
     <button (click)="recargarPagina()" type="submit" [disabled]="cargando">
         {{ editando ? 'Actualizar' : 'Guardar' }}
@@ -22,6 +28,8 @@
             <th>Nombre Canción</th>
             <th>Artista</th>
             <th>Duracion</th>
+            <th>Año</th>
+            <th>Reproducciones</th>
             <th>Acciones</th>
         </tr>
     </thead>
@@ -31,6 +39,8 @@
             <td> {{ c.nombre }} </td>
             <td> {{ c.artista }} </td>
             <td> {{ c.duracion }} </td>
+            <td> {{ c.anio }} </td>
+            <td> {{ c.reproducciones }} </td>
             <td>
                 <button type="button" [disabled]="cargando" (click)="editarCancion(c)">Editar</button>
                 <button type="button" [disabled]="cargando" (click)="eliminarCancion(c._id); recargarPagina()">Eliminar</button>

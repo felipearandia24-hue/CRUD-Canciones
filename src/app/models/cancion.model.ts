@@ -3,4 +3,6 @@ export interface Cancion {
   nombre: string;
   artista: string;
   duracion: string;
+  anio: number;
+  reproducciones: string;
 }

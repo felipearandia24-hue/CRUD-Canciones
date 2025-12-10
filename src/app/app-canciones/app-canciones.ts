@@ -11,7 +11,7 @@ import { CancionesService } from '../services/canciones';
 export class AppCanciones implements OnInit {
 
     canciones: Cancion[] = [];
-    cancion: Cancion = { nombre: '', artista: '', duracion: '' };
+    cancion: Cancion = { nombre: '', artista: '', duracion: '', anio: 1, reproducciones: '' };
   
     editando = false;
     idEditando: string | null = null;
@@ -34,7 +34,8 @@ export class AppCanciones implements OnInit {
   
       if (!this.cancion.nombre.trim() ||
         !this.cancion.artista.trim() ||
-        !this.cancion.duracion.trim()) {
+        !this.cancion.duracion.trim() ||
+        !this.cancion.reproducciones.trim()) {
         alert('Completa todos los campos antes de guardar');
         return;
       }
@@ -58,6 +59,8 @@ export class AppCanciones implements OnInit {
   
   
     editarCancion(cancion: Cancion) {
+      if (!confirm('¿Está seeguro de editar?')) return;
+
       if (this.cargando) return;
   
       this.editando = true;
@@ -66,6 +69,7 @@ export class AppCanciones implements OnInit {
     }
   
     eliminarCancion(id: string | undefined) {
+      if (!confirm('¿Está seeguro de eliminar?')) return;
       if (!id || this.cargando) return;
   
       this.cargando = true;
@@ -77,7 +81,7 @@ export class AppCanciones implements OnInit {
     }
   
     resetForm() {
-      this.cancion = { nombre: '', artista: '', duracion: '' };
+      this.cancion = { nombre: '', artista: '', duracion: '', anio: 1, reproducciones: '' };
       this.editando = false;
       this.idEditando = null;
     }
