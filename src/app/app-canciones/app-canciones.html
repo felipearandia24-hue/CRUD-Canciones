@@ -1,6 +1,6 @@
-<div class="navbar">
-    <h2>Gestión de Canciones</h2>
-</div>
+<nav class="navbar-custom">
+    <h1>🎵 Gestión de Canciones</h1>
+</nav>
 
 <form (ngSubmit)="guardarCanciones()">
 
@@ -43,7 +43,8 @@
             <td> {{ c.reproducciones }} </td>
             <td>
                 <button type="button" [disabled]="cargando" (click)="editarCancion(c)">Editar</button>
-                <button type="button" [disabled]="cargando" (click)="eliminarCancion(c._id); recargarPagina()">Eliminar</button>
+                <button type="button" [disabled]="cargando"
+                    (click)="eliminarCancion(c._id); recargarPagina()">Eliminar</button>
             </td>
         </tr>
     </tbody>

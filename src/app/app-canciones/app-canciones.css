@@ -1,106 +1,144 @@
-h2 {
+.navbar-custom {
+  width: 100%;
+  padding: 18px 0;
+  background: linear-gradient(135deg, #6a5cff, #8f6bff);
   text-align: center;
-  font-size: 26px;
-  margin-bottom: 20px;
-  color: #333;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.20);
+}
+
+.navbar-custom h1 {
+  margin: 0;
+  color: white;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  font-family: 'Poppins', sans-serif;
 }
 
 form {
   max-width: 400px;
-  margin: 0 auto;
-  background: #f8f8f8;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 2px 6px rgba(0,0,0,0.15);
+  margin: 40px auto 0 auto;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.12);
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
+  border: 1px solid #f0f0f0;
+  transition: all .3s;
+}
+
+form:hover {
+  box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.18);
+  transform: translateY(-2px);
 }
 
 form input {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  padding: 12px;
+  border: 1px solid #d3d3d3;
+  border-radius: 10px;
   font-size: 16px;
   outline: none;
-  transition: all 0.2s;
+  background: #f9f9ff;
+  transition: all 0.25s ease;
+}
+
+form input:hover {
+  background: #f1f1ff;
 }
 
 form input:focus {
-  border-color: #00ff73e1;
-  box-shadow: 0px 0px 4px rgba(0, 255, 55, 0.646);
+  border-color: #7b5cff;
+  box-shadow: 0px 0px 6px rgba(123, 92, 255, 0.5);
+  background: #ffffff;
 }
 
 form button {
-  padding: 10px;
-  font-size: 16px;
-  background: #007bff;
+  padding: 12px;
+  font-size: 17px;
+  background: linear-gradient(135deg, #6a5cff, #8f6bff);
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: 0.3s;
+  font-weight: 600;
+  box-shadow: 0px 4px 10px rgba(123, 92, 255, 0.4);
+  transition: 0.25s;
 }
 
 form button:hover {
-  background: #0056b3;
+  background: linear-gradient(135deg, #5a4be6, #7c5aff);
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 14px rgba(123, 92, 255, 0.55);
 }
 
 table {
-  width: 90%;
-  margin: 25px auto;
+  width: 92%;
+  margin: 30px auto;
   border-collapse: collapse;
-  background: #fff;
-  border-radius: 10px;
+  background: #ffffff;
+  border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0px 2px 6px rgba(0,0,0,0.15);
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.12);
 }
 
 table th {
-  background: #007bff;
+  background: linear-gradient(135deg, #6a5cff, #8f6bff);
   color: white;
-  padding: 12px;
+  padding: 14px;
   text-align: left;
   font-size: 16px;
+  letter-spacing: 0.5px;
 }
 
 table td {
-  padding: 12px;
-  border-bottom: 1px solid #ddd;
+  padding: 14px;
+  border-bottom: 1px solid #eee;
+  transition: background 0.2s;
 }
 
 table tr:hover {
-  background-color: #f2f2f2;
+  background-color: #f7f5ff;
 }
 
 table button {
-  padding: 6px 12px;
+  padding: 7px 14px;
   margin-right: 8px;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.25s;
 }
 
 table button:nth-child(1) {
-  background: #ffc107;
+  background: #ffda79;
   color: #333;
 }
 
 table button:nth-child(1):hover {
-  background: #e0a800;
+  background: #ffc94d;
 }
 
 table button:nth-child(2) {
-  background: #dc3545;
+  background: #ff6b6b;
   color: white;
 }
 
 table button:nth-child(2):hover {
-  background: #b52a35;
+  background: #e45858;
 }
 
 @media (max-width: 600px) {
-  table, tr, td, th {
+
+  table,
+  tr,
+  td,
+  th {
     font-size: 14px;
   }
 

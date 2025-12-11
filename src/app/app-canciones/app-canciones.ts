@@ -59,7 +59,7 @@ export class AppCanciones implements OnInit {
   
   
     editarCancion(cancion: Cancion) {
-      if (!confirm('¿Está seeguro de editar?')) return;
+      if (!confirm('¿Está seguro de editar?')) return;
 
       if (this.cargando) return;
   
